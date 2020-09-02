@@ -34,10 +34,15 @@ jobs:
        - name: execute py script # run the run.py to get the latest data
          # run: python test.py
          run: python -m markdown README.md > foo.html
-       - name: Commit report
-         run: 
-          git commit -am "Automated report"
-          git push
+       - name: Commit files
+         run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Add changes" -a
+       - name: Push changes
+         uses: ad-m/github-push-action@master
+         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
         
         
 
