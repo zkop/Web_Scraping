@@ -36,7 +36,7 @@ jobs:
          run: python -m markdown README.md > foo.html
        - name: Commit report
          run: 
-          git config --global user.name 'Farid'
+          git config --global user.name 'zkop'
           git config --global user.email 'zkop@mail.ru'
           git commit -am "Automated report"
           git push
