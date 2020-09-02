@@ -53,11 +53,11 @@ jobs:
       - name: Set AWS environment
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id:
-          aws-secret-access-key:
-          aws-region:
-      -name: Push to S3
-       run: aws s3 cp "file_name" s3:://
+          aws-access-key-id: test
+          aws-secret-access-key: test
+          aws-region: test
+      - name: Push to S3
+        run: aws s3 cp "file_name" s3:://
       
         
         
